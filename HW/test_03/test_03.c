@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include<math.h>
 
 int element_legal(char x){
     char E[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
@@ -25,7 +26,15 @@ void Dec_to_bin(int x, char* bin){
     bin[6] = '\0';
 }
 
-int deter1(char e, char bin[]){
+int Bin_to_dec(char bin[]){
+    int sum = 0;
+    for(int i = 0; i < 6; i++){
+        sum += (int)(bin[i]-48) * (int)pow(2, i);       
+    }
+    return sum;
+}
+
+int out1(char e, char bin[]){
     char E[7] = "abcdef";
     int index = 0;
     for(int i = 0; i < 6; i++){
@@ -39,6 +48,28 @@ int deter1(char e, char bin[]){
     else{
         return 0;
     }
+}
+
+int out2(char a[], char b[]){
+    int flag = 0;
+    for(int i = 0; i < 6; i++){
+        if(a[i] == '1' && b[i] != '1'){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void set_difference(char a[], char b[], char* s){
+    for(int i = 0; i < 6; i++){
+        if(a[i] == '1' && b[i] == '0'){
+            s[i] = '1';
+        }
+        else{
+            s[i] = '0';
+        }
+    }
+    s[6] = '\0';
 }
 
 int main(){
@@ -83,12 +114,27 @@ int main(){
     strcpy(bin2, bin1);
     bin2[index] = '1';
     
-    if(deter1(e2, bin2) == 1){
+    if(out1(e2, bin2) == 1){  // output row 1
         printf("Y\n");
     }
     else{
         printf("N\n");
     }
+
+    if(out2(bin2, bin0) == 1){    //output row 2
+        printf("Y\n");
+    }
+    else{
+        printf("N\n");
+    }
+
+    int a = Bin_to_dec(bin0), b = Bin_to_dec(bin2);
+    char s[7] = "";
+    printf("%d\n", a & b);
+    printf("%d\n", a | b);
+    set_difference(bin0, bin2, s);
+    // printf("%s\n", s);
+    printf("%d", Bin_to_dec(s));
     
     return 0;
 }
