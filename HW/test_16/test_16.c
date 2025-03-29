@@ -129,7 +129,7 @@ void big_integer_mul(char *n1, char *n2, char *sum){
 
 int main(){
     char n1[102] = {}, n2[102] = {}, sum[201] = {};
-    int flag = 0;   // 0 => ++, 1 => +-, 2 => -+, 3 => --
+    // int flag = 0;   // 0 => ++, 1 => +-, 2 => -+, 3 => --
     gets(n1);
     gets(n2);
     if (n1[0] != '-' && n2[0] != '-'){
