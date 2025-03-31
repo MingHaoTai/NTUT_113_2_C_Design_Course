@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/Noel/Desktop/NTUT/NTUT_113_2_C_Design_Course/HW/test_16/test_16'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _str_shift, symObjAddr: 0x0, symBinAddr: 0x1000032E0, symSize: 0xA0 }
+  - { offset: 0x48, size: 0x8, addend: 0x0, symName: _str_shift, symObjAddr: 0x0, symBinAddr: 0x1000032E0, symSize: 0xA0 }
+  - { offset: 0xA4, size: 0x8, addend: 0x0, symName: _str_empty, symObjAddr: 0xA0, symBinAddr: 0x100003380, symSize: 0x70 }
+  - { offset: 0xF2, size: 0x8, addend: 0x0, symName: _remove_zeros, symObjAddr: 0x110, symBinAddr: 0x1000033F0, symSize: 0xC8 }
+  - { offset: 0x124, size: 0x8, addend: 0x0, symName: _big_integer_add, symObjAddr: 0x1D8, symBinAddr: 0x1000034B8, symSize: 0x1E4 }
+  - { offset: 0x1F0, size: 0x8, addend: 0x0, symName: _big_integer_sub, symObjAddr: 0x3BC, symBinAddr: 0x10000369C, symSize: 0x258 }
+  - { offset: 0x2CA, size: 0x8, addend: 0x0, symName: _big_integer_mul, symObjAddr: 0x614, symBinAddr: 0x1000038F4, symSize: 0x204 }
+  - { offset: 0x396, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x818, symBinAddr: 0x100003AF8, symSize: 0x438 }
+...
