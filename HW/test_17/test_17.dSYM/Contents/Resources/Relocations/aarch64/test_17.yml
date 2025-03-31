@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/Noel/Desktop/NTUT/NTUT_113_2_C_Design_Course/HW/test_17/test_17'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _winner_team, symObjAddr: 0x0, symBinAddr: 0x100003A64, symSize: 0xB0 }
+  - { offset: 0x41, size: 0x8, addend: 0x0, symName: _winner_team, symObjAddr: 0x0, symBinAddr: 0x100003A64, symSize: 0xB0 }
+  - { offset: 0xA1, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xB0, symBinAddr: 0x100003B14, symSize: 0x440 }
+...
