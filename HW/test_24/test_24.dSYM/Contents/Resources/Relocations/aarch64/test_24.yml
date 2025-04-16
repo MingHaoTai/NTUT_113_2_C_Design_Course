@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/Noel/Desktop/NTUT/NTUT_113_2_C_Design_Course/HW/test_24/test_24'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _roll_10, symObjAddr: 0x0, symBinAddr: 0x1000030B0, symSize: 0x1F4 }
+  - { offset: 0x41, size: 0x8, addend: 0x0, symName: _roll_10, symObjAddr: 0x0, symBinAddr: 0x1000030B0, symSize: 0x1F4 }
+  - { offset: 0x9D, size: 0x8, addend: 0x0, symName: _roll_11, symObjAddr: 0x1F4, symBinAddr: 0x1000032A4, symSize: 0xE8 }
+  - { offset: 0xEB, size: 0x8, addend: 0x0, symName: _roll_12, symObjAddr: 0x2DC, symBinAddr: 0x10000338C, symSize: 0x1F4 }
+  - { offset: 0x147, size: 0x8, addend: 0x0, symName: _roll_20, symObjAddr: 0x4D0, symBinAddr: 0x100003580, symSize: 0x1F4 }
+  - { offset: 0x1A3, size: 0x8, addend: 0x0, symName: _roll_21, symObjAddr: 0x6C4, symBinAddr: 0x100003774, symSize: 0xE8 }
+  - { offset: 0x1F1, size: 0x8, addend: 0x0, symName: _roll_22, symObjAddr: 0x7AC, symBinAddr: 0x10000385C, symSize: 0x1F4 }
+  - { offset: 0x24D, size: 0x8, addend: 0x0, symName: _cubeMove, symObjAddr: 0x9A0, symBinAddr: 0x100003A50, symSize: 0x180 }
+  - { offset: 0x2A9, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xB54, symBinAddr: 0x100003C04, symSize: 0x180 }
+...
