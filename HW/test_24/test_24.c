@@ -14,12 +14,12 @@ void roll_10(Cube* a){
     a->back00 = a->down00;
     a->back10 = a->down10;
     a->back20 = a->down20;
-    a->down00 = a->front00;
-    a->down10 = a->front10;
-    a->down20 = a->front20;
-    a->front00 = a->up00;
-    a->front10 = a->up10;
-    a->front20 = a->up20;
+    a->down00 = a->front22;
+    a->down10 = a->front12;
+    a->down20 = a->front02;
+    a->front22 = a->up00;
+    a->front12 = a->up10;
+    a->front02 = a->up20;
     a->up00 = tmp0;
     a->up10 = tmp1;
     a->up20 = tmp2;
@@ -41,12 +41,12 @@ void roll_11(Cube* a){
     a->back01 = a->down01;
     a->back11 = a->down11;
     a->back21 = a->down21;
-    a->down01 = a->front01;
+    a->down01 = a->front21;
     a->down11 = a->front11;
-    a->down21 = a->front21;
-    a->front01 = a->up01;
+    a->down21 = a->front01;
+    a->front21 = a->up01;
     a->front11 = a->up11;
-    a->front21 = a->up21;
+    a->front01 = a->up21;
     a->up01 = tmp0;
     a->up11 = tmp1;
     a->up21 = tmp2;
@@ -57,12 +57,12 @@ void roll_12(Cube* a){
     a->back02 = a->down02;
     a->back12 = a->down12;
     a->back22 = a->down22;
-    a->down02 = a->front02;
+    a->down02 = a->front22;
     a->down12 = a->front12;
-    a->down22 = a->front22;
-    a->front02 = a->up02;
+    a->down22 = a->front02;
+    a->front22 = a->up02;
     a->front12 = a->up12;
-    a->front22 = a->up22;
+    a->front02 = a->up22;
     a->up02 = tmp0;
     a->up12 = tmp1;
     a->up22 = tmp2;
@@ -159,6 +159,9 @@ void cubeMove(Cube* a, int move[], int n){
             case 21: roll_21(a); break;
             case 22: roll_22(a); break;
         }
+        // printf("%d %d %d \n%d %d %d \n%d %d %d \n\n", a->back00, a->back01, a->back02,
+        //     a->back10, a->back11, a->back12,
+        //     a->back20, a->back21, a->back22);
     }
     printf("%d %d %d \n%d %d %d \n%d %d %d \n", a->back00, a->back01, a->back02,
                                                 a->back10, a->back11, a->back12,
