@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/Noel/Desktop/NTUT/NTUT_113_2_C_Design_Course/HW/test_25/test'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _checkHorizontal, symObjAddr: 0x0, symBinAddr: 0x100002F5C, symSize: 0x1EC }
+  - { offset: 0x41, size: 0x8, addend: 0x0, symName: _checkHorizontal, symObjAddr: 0x0, symBinAddr: 0x100002F5C, symSize: 0x1EC }
+  - { offset: 0xD9, size: 0x8, addend: 0x0, symName: _checkVertical, symObjAddr: 0x1EC, symBinAddr: 0x100003148, symSize: 0x1EC }
+  - { offset: 0x171, size: 0x8, addend: 0x0, symName: _checkRightSlant, symObjAddr: 0x3D8, symBinAddr: 0x100003334, symSize: 0x2E8 }
+  - { offset: 0x225, size: 0x8, addend: 0x0, symName: _checkLeftSlant, symObjAddr: 0x6C0, symBinAddr: 0x10000361C, symSize: 0x2E8 }
+  - { offset: 0x2D9, size: 0x8, addend: 0x0, symName: _mySort, symObjAddr: 0x9A8, symBinAddr: 0x100003904, symSize: 0x27C }
+  - { offset: 0x37B, size: 0x8, addend: 0x0, symName: _findSpace, symObjAddr: 0xC24, symBinAddr: 0x100003B80, symSize: 0x2C8 }
+  - { offset: 0x41D, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xEEC, symBinAddr: 0x100003E48, symSize: 0x100 }
+...
