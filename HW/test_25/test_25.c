@@ -5,11 +5,17 @@ int checkHorizontal(int data[10][10], int i, int j){
     int start = j, end = j;
     while (start > 0 && start > j - 4) start--;
     while (end < 9 && end < j + 4) end++;
-    // if (i == 0 && j == 5) {
+    // if (i == 0 && j == 8) {
     //     printf("%d %d\n", start, end);
     // }
     for (int k = start; k <= end; k++){
         if (data[i][k] == 1 || k == j) {
+            if (k == start && start-1 >= 0 && data[i][start-1] == 1) {
+                count++;
+            }
+            else if (k == end && end+1 <= 9 && data[i][end+1] == 1) {
+                count++;
+            }
             count++;
         }
         else{
@@ -21,11 +27,11 @@ int checkHorizontal(int data[10][10], int i, int j){
         else if (count > 5) {
             flag = 0;
         }
-        // if (i == 0 && j == 5) {
+        // if (i == 0 && j == 8) {
         //     printf("%d %d %d %d\n", i, j, count, flag);
         // }
     }
-    if (count <= 5 && flag == 1) {
+    if (count <= 5 && flag == 1 ) {
         return 1;
     }
     return 0;
@@ -36,8 +42,17 @@ int checkVertical(int data[10][10], int i, int j){
     int start = i, end = i;
     while (start > 0 && start > i - 4) start--;
     while (end < 9 && end < i + 4) end++;
+    // if (i == 0 && j == 8) {
+    //     printf("%d %d\n", start, end);
+    // }
     for (int k = start; k <= end; k++){
         if (data[k][j] == 1 || k == i) {
+            if (k == start && start-1 >= 0 && data[start-1][j] == 1) {
+                count++;
+            }
+            else if (k == end && end+1 <= 9 && data[end+1][j] == 1) {
+                count++;
+            }
             count++;
         }
         else{
@@ -49,10 +64,14 @@ int checkVertical(int data[10][10], int i, int j){
         else if (count > 5) {
             flag = 0;
         }
+        // if (i == 0 && j == 8) {
+        //     printf("%d %d %d %d\n", i, j, count, flag);
+        // }
     }
     if (count <= 5 && flag == 1) {
         return 1;
     }
+    
     return 0;
 }
 
@@ -74,6 +93,12 @@ int checkRightSlant(int data[10][10], int i, int j){
     int a = start_i, b = start_j;
     while (a <= end_i && b <= end_j){
         if (data[a][b] == 1 || (a == i && b == j)) {
+            if (a == start_i && start_i-1 >= 0 && start_j-1 >= 0 && data[start_i-1][start_j-1] == 1) {
+                count++;
+            }
+            else if (a == end_i && end_i+1 <= 9 && end_j+1 <= 9 && data[end_i+1][end_j+1] == 1) {
+                count++;
+            }
             count++;
         }
         else{
@@ -111,10 +136,16 @@ int checkLeftSlant(int data[10][10], int i, int j){
     // if (i == 2 && j == 4) {
     //     printf("%d %d %d %d\n", start_i, end_i, start_j, end_j);
     // }
-
+ 
     int a = start_i, b = start_j;
     while (a <= end_i && b >= end_j){
         if (data[a][b] == 1 || (a == i && b == j)) {
+            if (a == start_i && start_i-1 >= 0 && start_j+1 <= 9 && data[start_i-1][start_j+1] == 1) {
+                count++;
+            }
+            else if (a == end_i && end_i+1 <= 9 && end_j-1 >= 0 && data[end_i+1][end_j-1] == 1) {
+                count++;
+            }
             count++;
         }
         else{
