@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/Noel/Desktop/NTUT/NTUT_113_2_C_Design_Course/HW/test_28/test_28'
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _is_all_upper, symObjAddr: 0x0, symBinAddr: 0x100003A0C, symSize: 0x98 }
+  - { offset: 0x41, size: 0x8, addend: 0x0, symName: _is_all_upper, symObjAddr: 0x0, symBinAddr: 0x100003A0C, symSize: 0x98 }
+  - { offset: 0xA1, size: 0x8, addend: 0x0, symName: _is_all_lower, symObjAddr: 0x98, symBinAddr: 0x100003AA4, symSize: 0x98 }
+  - { offset: 0x101, size: 0x8, addend: 0x0, symName: _is_k_alternating, symObjAddr: 0x130, symBinAddr: 0x100003B3C, symSize: 0x168 }
+  - { offset: 0x1A7, size: 0x8, addend: 0x0, symName: _find_max_k_alternating, symObjAddr: 0x298, symBinAddr: 0x100003CA4, symSize: 0x108 }
+  - { offset: 0x231, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x3A0, symBinAddr: 0x100003DAC, symSize: 0x19C }
+...
