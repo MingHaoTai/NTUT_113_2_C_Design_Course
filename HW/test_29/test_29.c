@@ -1,35 +1,23 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 
 double f1(double x, double a) {
-    return a * x * x + 1;
+    return a * x * x;
 }
 
 double f2(double x, double a) {
-    return a * x * x * x + x;
+    return a * x * x * x;
 }
 
-double trapezoidal(double (*f)(double, double), double a, double p, double q, int err) {
-    int n = 1;
-    double prev = 0.0;
-    double epsilon = pow(10, -err);
+double trapezoid(double (*f)(double, double), double a, double p, double q, int n) {
+    double h = (q - p) / n;
+    double sum = (f(p, a) + f(q, a)) / 2.0;
 
-    while (1) {
-        double h = (q - p) / n;
-        double sum = f(p, a) + f(q, a);
-        for (int i = 1; i < n; i++) {
-            double x = p + i * h;
-            sum += 2 * f(x, a);
-        }
-        double result = sum * h / 2.0;
-
-        if (fabs(result - prev) < epsilon) {
-            return result;
-        }
-        prev = result;
-        n *= 2;
+    for (int i = 1; i < n; ++i) {
+        sum += f(p + i * h, a);
     }
+
+    return sum * h;
 }
 
 int main() {
@@ -37,24 +25,32 @@ int main() {
     while (scanf("%d", &type) == 1) {
         if (type == 0) break;
 
-        double (*func)(double, double) = NULL;
-
-        if (type == 1) func = f1;
-        else if (type == 2) func = f2;
-        else {
-            printf("Invalid\n");
-            continue;
-        }
-
         double a, p, q;
         int err;
-        if (scanf("%lf %lf %lf %d", &a, &p, &q, &err) != 4) {
-            printf("Invalid\n");
-            continue;
-        }
 
-        double result = trapezoidal(func, a, p, q, err);
-        printf("%.12lf\n", result);
+        if (type == 1 || type == 2) {
+            scanf("%lf %lf %lf %d", &a, &p, &q, &err);
+            double (*f)(double, double) = (type == 1) ? f1 : f2;
+
+            int n = 1;
+            double prev = trapezoid(f, a, p, q, n);
+            double curr;
+
+            double eps = pow(10.0, -err);
+
+            while (1) {
+                n *= 2;
+                curr = trapezoid(f, a, p, q, n);
+                if (fabs(curr - prev) < eps) break;
+                prev = curr;
+            }
+
+            printf("%.12lf\n", curr);
+
+        } else {
+            printf("Invalid\n");
+        }
     }
+
     return 0;
 }
